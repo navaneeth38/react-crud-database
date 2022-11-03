@@ -14,10 +14,11 @@ export const Read =() =>{
     },[])
 
     const setData  = (data) =>{
-      let {id,firstName,lastName,checkbox,dob} = data
+      let {id,firstName,lastName,blood,checkbox,dob} = data
       localStorage.setItem("ID",id)
       localStorage.setItem("First Name",firstName)
       localStorage.setItem("Last Name",lastName)
+      localStorage.setItem("Blood Group",blood)
       localStorage.setItem("Check box",checkbox)
       localStorage.setItem("Dob",dob)
 
@@ -37,13 +38,18 @@ export const Read =() =>{
       }
 
     return(
+      <div>
+         <Link to ='/create'>
+          <Button >Create</Button>
+          </Link>
         <div>
-            <Table singleLine>
+  <Table singleLine>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell>ID</Table.HeaderCell>
         <Table.HeaderCell>First Name</Table.HeaderCell>
         <Table.HeaderCell>Last Name</Table.HeaderCell>
+        <Table.HeaderCell>Blood Group</Table.HeaderCell>
         <Table.HeaderCell>DOB</Table.HeaderCell>
         <Table.HeaderCell>Checked</Table.HeaderCell>
         <Table.HeaderCell>Update</Table.HeaderCell>
@@ -57,6 +63,7 @@ export const Read =() =>{
         <Table.Cell>{data.id}</Table.Cell>
         <Table.Cell>{data.firstName}</Table.Cell>
         <Table.Cell>{data.lastName}</Table.Cell>
+        <Table.Cell>{data.blood}</Table.Cell>
         <Table.Cell>{data.dob}</Table.Cell>
         <Table.Cell>{data.checkbox? 'checked':'Unchecked'}</Table.Cell>
         <Link to= '/update'>
@@ -67,6 +74,7 @@ export const Read =() =>{
       )})}
     </Table.Body>
     </Table>
+    </div>
 
         </div>
     )

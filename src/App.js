@@ -8,7 +8,7 @@ import Update from "./components/update/Update";
 function App() {
   return (
     <div className="main">
-        <h2 className="main-header">Student Database</h2>
+        <h2 className="main-header">Database</h2>
     <Routes>
       <Route path="/create" element={<Create/>} />
       <Route path="/read" element={<Read/>} />
